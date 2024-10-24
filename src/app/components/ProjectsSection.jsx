@@ -67,6 +67,9 @@ const ProjectsSection = () => {
         setTag(newtAG);
     }
 
+    const filteredProjects = projectsData.filter((project) => 
+         project.tag.includes(tag));
+
     return (
         <>
             <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">My Projects</h2>
@@ -77,7 +80,7 @@ const ProjectsSection = () => {
 
             </div>
             <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-                {projectsData.map((project) => (
+                {filteredProjects.map((project) => (
                     <ProjectCard 
                         key={project.id} 
                         titlle={project.title}
